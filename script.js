@@ -3,6 +3,8 @@ function changeStyleBasedOnTime() {
 
     //* 1. Ici on veut créer la variable currentHour qui contient l'heure actuelle en direct. On peut l'obtenir grâce à la fonction interne à Javascript : new Date().getHours(). Le résultat est une valeur de type number comprise entre 0 et 23
 
+let currentHour = new Date().getHours();
+console.log(currentHour);
 
 
 
@@ -11,12 +13,18 @@ function changeStyleBasedOnTime() {
     //* 2. On crée la variable sayHi qui correspond à la balise ayant l'id 'say-hi'
 
 
+let sayHi= document.getElementById("say-hi")
+console.log(sayHi);
 
 
 
     //**! 3. ICI on veut une condition pour afficher Bonjour ou Bonsoir en fonction de l'heure de la journée */
         //* Entre 5h et 18h, on affiche "Bonjour !" en injectant du code dans l'id say-hi
-
+if (currentHour >=5 && currentHour <=18) {
+    sayHi.innerHTML="bonjour"
+} else {
+    sayHi.innerHTML="bonsoir"
+}
 
 
 
@@ -28,7 +36,7 @@ function changeStyleBasedOnTime() {
 
     //* 4. On créé la variable element qui correspond à la balise ayant l'id 'time-based-style'
 
-
+let element= document.getElementById('time-based-style')
 
 
 
@@ -36,6 +44,8 @@ function changeStyleBasedOnTime() {
 
 
 
+element.classList.remove("matin", "aurore", "apres-midi", "soiree", "nuit")
+console.log(element);
 
 
 
@@ -54,7 +64,18 @@ function changeStyleBasedOnTime() {
 
 
 
+if  (currentHour =>5 && currentHour <=8 ){
+element.classList.add('aurore');
+}else if (currentHour =>8 && currentHour <=12){
+element.classList.add('matin');
+}else if(currentHour =>12 && currentHour <=18){
+element.classList.add('apres-midi');
+}else if(currentHour =>18 && currentHour <=22){
+element.classList.add('soiree');
+}else
+element.classList.add('nuit');
 
+console.log(19)
 
 
 
